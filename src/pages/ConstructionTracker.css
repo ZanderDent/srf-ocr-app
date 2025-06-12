@@ -1,0 +1,282 @@
+:where(.construction-tracker-page) {
+  --ion-background-color: #1e2a38 !important;
+  color: #f0f0f0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #f0f0f0;
+  font-weight: 500;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+  border: 1px solid #2e3a4a;
+  border-radius: 8px;
+  background: #2e3a4a;
+  padding-right: 1rem; /* Prevent input cutoff at right edge */
+}
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-table th,
+.task-table td {
+  min-width: 90px; /* Reduce min-width for more columns */
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #2e3a4a;
+  color: #ecf0f1;
+}
+
+.task-table th {
+  background-color: #1e2a38;
+  font-weight: bold;
+}
+
+.task-table td {
+  background-color: #2e3a4a;
+  padding: 0.5rem;
+}
+
+.table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #7f8c8d;
+  border-radius: 3px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #bdc3c7;
+}
+
+@media (max-width: 600px) {
+  .table-responsive,
+  .task-table,
+  .task-table thead,
+  .task-table tbody,
+  .task-table th,
+  .task-table td,
+  .task-table tr {
+    display: none;
+  }
+
+  ion-card {
+    background: #1e2a38;
+    border: 1px solid #2e3a4a;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding-bottom: 0.5rem;
+  }
+
+  ion-card ion-card-header {
+    background: #2e3a4a;
+    color: #ecf0f1;
+    padding: 0.75rem;
+  }
+
+  ion-card ion-card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  ion-card ion-card-content,
+  ion-card ion-item {
+    --background: #1e2a38;
+    --color: #ecf0f1;
+    margin: 0.5rem 0;
+  }
+
+  ion-card ion-input {
+    --background: #2e3a4a;
+    color: #ecf0f1 !important;
+    border: 1px solid #7f8c8d;
+    border-radius: 8px;
+  }
+
+  ion-card ion-button {
+    margin-top: 0.5rem;
+  }
+
+  ion-list {
+    padding: 0 0.5rem;
+  }
+
+  .task-card {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+.custom-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #ffffff;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.custom-button {
+  margin: 0.5rem 0.25rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: #1e2a38;
+  border: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.custom-button:hover {
+  background-color: #2980b9;
+}
+
+.gantt-chart-wrapper {
+  position: relative;
+  border: 1px solid #2e3a4a;
+  border-radius: 8px;
+  margin: 2rem 0;
+  background: #1e2a38;
+  padding: 1rem;
+  border-bottom: 1px solid #2e3a4a;
+}
+
+.gantt-chart {
+  width: 100%;
+  height: 400px;
+}
+
+.gantt-chart-wrapper ion-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: #1e2a38;
+  border-radius: 4px;
+  border: 1px solid #e74c3c;
+}
+
+.section {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  color: #f0f0f0;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.form-section {
+  padding: 1.2rem 0.75rem 1.2rem 0.75rem;
+  background: #232f3e;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.form-wrapper {
+  padding: 1rem 0.5rem;
+  background: #232f3e;
+  border-radius: 10px;
+  margin-bottom: 1.2rem;
+}
+
+ion-input.custom-input {
+  --background: #232f3e;
+  --color: #f0f0f0;
+  --placeholder-color: #b0b0b0;
+  --placeholder-opacity: 1;
+  --border-radius: 8px;
+  --border-width: 1.5px;
+  --border-color: #3a4a5a;
+  --padding-start: 0.9rem;
+  --padding-end: 0.9rem;
+  --padding-top: 0.7rem;
+  --padding-bottom: 0.7rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border: 1.5px solid #3a4a5a;
+  margin-bottom: 0.2rem;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  color-scheme: dark;
+}
+
+ion-input.custom-input::part(native) {
+  background: #232f3e !important;
+  color: #f0f0f0 !important;
+  border-radius: 8px !important;
+  border: none !important;
+  font-size: 1rem !important;
+  box-sizing: border-box !important;
+  padding: 0.7rem 0.9rem !important;
+}
+
+ion-input.custom-input::part(placeholder) {
+  color: #b0b0b0 !important;
+  opacity: 1 !important;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .form-section, .form-wrapper {
+    padding: 1rem 0.25rem;
+  }
+  .form-group {
+    margin-bottom: 0.9rem;
+  }
+  ion-input.custom-input {
+    font-size: 0.98rem;
+    padding: 0.6rem 0.7rem;
+  }
+}
+
+/* Ensure no input overflow on mobile */
+ion-input.custom-input, ion-input.custom-input::part(native) {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  ion-input.custom-input::part(native) {
+    background-color: #f5f5f5 !important;
+    color: #111 !important;
+  }
+
+  ion-input.custom-input::part(placeholder) {
+    color: #999 !important;
+  }
+}
