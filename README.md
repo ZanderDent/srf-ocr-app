@@ -2,7 +2,7 @@
 
 > **Please Note:** This is not yet deployed and the OCR engines I’ve tried aren’t great at handwriting. They extract printed text well, but for more accurate handwritten transcription, consider purchasing a license of [Handwriting OCR](https://www.handwritingocr.com/) and integrating their API.
 
-> **⚠️ Local Development Only:**
+> **Local Development Only:**
 > This app currently runs **locally** through a Flask backend on your computer. There is no live/public backend API. To use the app on your phone, your device and computer must be on the same Wi-Fi network, and the frontend must point to your computer’s LAN IP address (see **Configure Backend API URL** below).
 
 A cross-platform mobile application for Optical Character Recognition (OCR) built with React (Ionic + Capacitor) for the frontend and Flask for the backend. The app allows users to capture or select images, extract text using OCR, and export results in CSV, Excel, or Word formats. Designed for both iOS and Android, with mobile-specific deployment and usage notes.
