@@ -1,19 +1,16 @@
 # SRF OCR Tool Mobile App (Local Dev Only)
 
-> **Important:** This app only works for local development. There is **no live or public backend**—the Flask backend must be running on your computer. The app cannot function unless your computer is on and running the backend server. Your phone and computer must be on the same Wi-Fi network, and the frontend must point to your computer’s LAN IP address (see **Configure Backend API URL** below).
+> **Please Note:** This is not yet deployed and the OCR engines I’ve tried aren’t great at handwriting. They extract printed text well, but for more accurate handwritten transcription, consider purchasing a license of [Handwriting OCR](https://www.handwritingocr.com/) and integrating their API.
 
-> **Export Limitation:** On mobile devices, exported files (CSV, Excel, Word) are currently saved or shared as plain text files (e.g., `.txt`) instead of the intended format. This is a known limitation due to mobile file handling and MIME type support. You will need to manually rename the file extension to `.csv`, `.xlsx`, or `.docx` after exporting for proper use.
+> **⚠️ Local Development Only:**
+> This app currently runs **locally** through a Flask backend on your computer. There is no live/public backend API. To use the app on your phone, your device and computer must be on the same Wi-Fi network, and the frontend must point to your computer’s LAN IP address (see **Configure Backend API URL** below).
 
-> **Handwriting OCR:** The included OCR engines work well for printed text but are not reliable for handwriting. For better handwritten transcription, consider a commercial solution like [Handwriting OCR](https://www.handwritingocr.com/).
+A cross-platform mobile application for Optical Character Recognition (OCR) built with React (Ionic + Capacitor) for the frontend and Flask for the backend. The app allows users to capture or select images, extract text using OCR, and export results in CSV, Excel, or Word formats. Designed for both iOS and Android, with mobile-specific deployment and usage notes.
 
 ---
 
 **DEMO VIDEO:**  
-[![Watch the demo](https://i.ytimg.com/vi/ScAFJ0KLNjk/oar2.jpg)](https://youtube.com/shorts/ScAFJ0KLNjk)
-
-A cross-platform mobile application for Optical Character Recognition (OCR) built with React (Ionic + Capacitor) for the frontend and Flask for the backend. The app allows users to capture or select images, extract text using OCR, and export results in CSV, Excel, or Word formats. **Note:** Exported files on mobile devices may not save with the correct format/extension (see above).
-
----
+[![Watch the demo](https://i.ytimg.com/vi/ScAFJ0KLNjk/oar2.jpg?sqp=-oaymwEoCMwCENAFSFqQAgHyq4qpAxcIARUAAIhC2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLAJb5jFLQJ4jhsYwReeyqL55a0a-w)](https://youtube.com/shorts/ScAFJ0KLNjk)
 
 ## Repository Structure
 
@@ -80,9 +77,9 @@ npm install
 ### 3. Configure Backend API URL
 - Create a `.env` file in `srf-ocr/`:
   ```env
-  VITE_API_URL=http://<YOUR_COMPUTER_IP>:5000
+  VITE_API_URL=http://<YOUR_BACKEND_IP>:5000
   ```
-- Replace `<YOUR_COMPUTER_IP>` with your computer's LAN IP address.
+- Replace `<YOUR_BACKEND_IP>` with your computer's IP address if running on a device.
 
 ### 4. Running in Browser (for development)
 ```bash
@@ -120,8 +117,7 @@ npx cap sync
 ---
 
 ## Export & File Sharing (Mobile)
-- **Known Issue:** On mobile devices, exported files (CSV, Excel, Word) are saved or shared as plain text files (e.g., `.txt`) instead of the intended format. This is due to current limitations with file handling and MIME type support in the mobile environment.
-- **Workaround:** After exporting, you must manually rename the file extension to `.csv`, `.xlsx`, or `.docx` for proper use.
+- Exported files (CSV, Excel, Word) are saved to the app's sandboxed file system.
 - On iOS, files are shared using the system share sheet. If you do not see the file in the Files app, use the share option to send/export it.
 - On Android, files can be shared or accessed via the app's file system or share sheet.
 - If you encounter encoding or file access issues, ensure you have the latest Capacitor plugins and permissions set in your native project.
@@ -138,10 +134,9 @@ npx cap sync
 - **CORS errors:**
   - Ensure Flask backend has CORS enabled (e.g., using `flask-cors`).
 
-- **Exported files not visible or wrong format:**
+- **Exported files not visible:**
   - On iOS, use the share sheet to export files to other apps (e.g., Files, Mail).
   - On Android, check app permissions and use the share option.
-  - If the file is saved as `.txt`, manually rename it to the correct extension on your computer.
 
 - **Camera or file access issues:**
   - Ensure you have granted camera and file permissions in the app settings.
@@ -150,7 +145,3 @@ npx cap sync
 - **iOS-specific:**
   - If you see a white screen or app fails to load, try cleaning the build folder in Xcode and rebuilding.
   - Make sure all required permissions are set in `Info.plist`.
-
----
-
-This README reflects the current local-only status and known mobile export limitations. For questions or updates, please open an issue or contact the maintainer.
